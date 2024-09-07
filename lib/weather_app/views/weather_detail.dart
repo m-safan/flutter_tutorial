@@ -9,6 +9,8 @@ class WeatherDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Expanded(
           child: Column(
@@ -23,8 +25,11 @@ class WeatherDetail extends StatelessWidget {
           ),
         ),
         Expanded(
-            child:
-                Image.network('http:${weatherReport.current.condition.icon}')),
+            child: Column(
+          children: [
+            Image.network('http:${weatherReport.current.condition.icon}'),
+          ],
+        )),
         Expanded(
           child: Column(
             children: [
