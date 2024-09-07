@@ -34,15 +34,29 @@ class _WeatherAppState extends State<WeatherApp> {
                 subtitle: Text('${value.region}, ${value.country}'),
               ),
               onSelected: (value) async {
-                _textController.text = value.name;
-                final weatherReport =
-                    await _controller.getWeatherReport(value.name);
-                setState(() {
-                  _weatherReport = weatherReport;
-                });
+                try {
+                  _textController.text = value.name;
+                  final weatherReport =
+                      await _controller.getWeatherReport(value.name);
+                  setState(() {
+                    _weatherReport = weatherReport;
+                  });
+                } on Exception {
+                  if (!context.mounted) return;
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                    backgroundColor: Colors.red,
+                    showCloseIcon: true,
+                    duration: Duration(seconds: 5),
+                    content: Text('Oops, Something went wrong'),
+                  ));
+                }
               },
-              suggestionsCallback: (search) {
-                return _controller.getLocations(search);
+              suggestionsCallback: (search) async {
+                try {
+                  return await _controller.getLocations(search);
+                } on Exception {
+                  return [];
+                }
               },
               builder: (context, controller, focusNode) => TextFormField(
                 controller: controller,
