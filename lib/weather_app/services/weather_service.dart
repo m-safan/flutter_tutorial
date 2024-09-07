@@ -8,8 +8,11 @@ class WeatherService {
   final _apiKey = 'acad7ae8d9c04811983161245242708';
 
   Future<WeatherReport> getWeatherReport(String query) async {
-    final response = await get(Uri.parse(
-        'https://api.weatherapi.com/v1/forecast.json?q=$query&days=14&key=$_apiKey'));
+    final response = await get(
+      Uri.parse(
+        'https://api.weatherapi.com/v1/forecast.json?q=$query&days=14&key=$_apiKey',
+      ),
+    );
     if (response.statusCode != 200) throw Exception(response.statusCode);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;
@@ -17,8 +20,11 @@ class WeatherService {
   }
 
   Future<List<Location>> getLocations(String query) async {
-    final response = await get(Uri.parse(
-        'https://api.weatherapi.com/v1/search.json?q=$query&key=$_apiKey'));
+    final response = await get(
+      Uri.parse(
+        'https://api.weatherapi.com/v1/search.json?q=$query&key=$_apiKey',
+      ),
+    );
     if (response.statusCode != 200) throw Exception(response.statusCode);
 
     final list = jsonDecode(response.body) as List<dynamic>;

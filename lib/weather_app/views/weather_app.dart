@@ -24,7 +24,7 @@ class _WeatherAppState extends State<WeatherApp> {
         title: const Text('Weather App'),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             TypeAheadField<Location>(
@@ -43,12 +43,14 @@ class _WeatherAppState extends State<WeatherApp> {
                   });
                 } on Exception {
                   if (!context.mounted) return;
-                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                    backgroundColor: Colors.red,
-                    showCloseIcon: true,
-                    duration: Duration(seconds: 5),
-                    content: Text('Oops, Something went wrong'),
-                  ));
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      backgroundColor: Colors.red,
+                      showCloseIcon: true,
+                      duration: Duration(seconds: 5),
+                      content: Text('Oops, Something went wrong'),
+                    ),
+                  );
                 }
               },
               suggestionsCallback: (search) async {
@@ -62,23 +64,25 @@ class _WeatherAppState extends State<WeatherApp> {
                 controller: controller,
                 focusNode: focusNode,
                 decoration: InputDecoration(
-                    hintText: 'Search City',
-                    suffixIcon: controller.text.isEmpty
-                        ? null
-                        : IconButton(
-                            onPressed: () {
-                              controller.clear();
-                              setState(() {
-                                _weatherReport = null;
-                              });
-                            },
-                            icon: const Icon(Icons.close))),
+                  hintText: 'Search City',
+                  suffixIcon: controller.text.isEmpty
+                      ? null
+                      : IconButton(
+                          onPressed: () {
+                            controller.clear();
+                            setState(() {
+                              _weatherReport = null;
+                            });
+                          },
+                          icon: const Icon(Icons.close),
+                        ),
+                ),
               ),
             ),
             if (_weatherReport != null) ...[
               const SizedBox(height: 50),
               WeatherDetail(weatherReport: _weatherReport!),
-            ]
+            ],
           ],
         ),
       ),

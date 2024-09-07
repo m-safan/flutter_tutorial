@@ -9,10 +9,6 @@ class WeatherReport {
     required this.forecast,
   });
 
-  final Location location;
-  final Current current;
-  final Forecast forecast;
-
   factory WeatherReport.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
@@ -28,4 +24,8 @@ class WeatherReport {
       _ => throw Exception('Could not deserialize WeatherReport model'),
     };
   }
+
+  final Location location;
+  final Current current;
+  final Forecast forecast;
 }
