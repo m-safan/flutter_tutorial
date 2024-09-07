@@ -8,13 +8,13 @@ This is a step by step guid to get started with application development with Flu
 - Download the [Flutter SDK](https://flutter-ko.dev/get-started/install/windows "Flutter SDK") as zip file
 - Extract to a specific folder `C:\Flutter_SDK`
 - Update Path in Environment variables `C:\Flutter_SDK\flutter\bin`
-- Run `flutter doctor` in an command prompt
+- Run `flutter doctor` in a command prompt
 
 
 ## Install Visual Studio Code
 
 - Download and install [Visual Studio Code](https://code.visualstudio.com/download "Visual Studio Code")
-- Install Flutter extension on Visual Studio Code
+- Install `Flutter` extension on Visual Studio Code
 
 
 ## Run flutter application
