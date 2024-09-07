@@ -37,28 +37,31 @@ class _WeatherDetailState extends State<WeatherDetail>
                       style: const TextStyle(fontSize: 36),
                     ),
                     Text(
-                        '${widget.weatherReport.location.region}, ${widget.weatherReport.location.country}')
+                      '''${widget.weatherReport.location.region}, ${widget.weatherReport.location.country}''',
+                    ),
                   ],
                 ),
               ),
               Expanded(
-                  child: Column(
-                children: [
-                  Image.network(
-                      'http:${widget.weatherReport.current.condition.icon}')
-                ],
-              )),
+                child: Column(
+                  children: [
+                    Image.network(
+                      'http:${widget.weatherReport.current.condition.icon}',
+                    ),
+                  ],
+                ),
+              ),
               Expanded(
                 child: Column(
                   children: [
                     Text(
-                      '${widget.weatherReport.current.temperature.round()}\u00b0C',
+                      '''${widget.weatherReport.current.temperature.round()}\u00b0C''',
                       style: const TextStyle(fontSize: 42),
                     ),
-                    Text(widget.weatherReport.current.condition.text)
+                    Text(widget.weatherReport.current.condition.text),
                   ],
                 ),
-              )
+              ),
             ],
           ),
           const SizedBox(height: 50),
@@ -68,23 +71,24 @@ class _WeatherDetailState extends State<WeatherDetail>
             controller: _tabController,
             tabs: const [
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8),
                 child: Text('Hourly', style: TextStyle(fontSize: 24)),
               ),
               Padding(
-                padding: EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(8),
                 child: Text('Daily', style: TextStyle(fontSize: 24)),
               ),
             ],
           ),
           Expanded(
-              child: TabBarView(
-            controller: _tabController,
-            children: [
-              Hourly(weatherReport: widget.weatherReport),
-              Daily(weatherReport: widget.weatherReport),
-            ],
-          )),
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                Hourly(weatherReport: widget.weatherReport),
+                Daily(weatherReport: widget.weatherReport),
+              ],
+            ),
+          ),
         ],
       ),
     );

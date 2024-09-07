@@ -25,8 +25,10 @@ class Daily extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.network('http:${item.day.condition.icon}',
-                          height: 40),
+                      Image.network(
+                        'http:${item.day.condition.icon}',
+                        height: 40,
+                      ),
                       Text(
                         item.day.rainPercentage > 0
                             ? '${item.day.rainPercentage}%'
@@ -40,7 +42,7 @@ class Daily extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  '${item.day.minimumTemperature.round()} ~ ${item.day.maximumTemperature.round()}',
+                  '''${item.day.minimumTemperature.round()} ~ ${item.day.maximumTemperature.round()}''',
                   style: style,
                 ),
               ],

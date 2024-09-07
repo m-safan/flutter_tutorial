@@ -10,22 +10,15 @@ class Day {
     required this.condition,
   });
 
-  final double maximumTemperature;
-  final double minimumTemperature;
-  final double averageTemperature;
-  final int rainPercentage;
-  final int snowPercentage;
-  final Condition condition;
-
   factory Day.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
-        'maxtemp_c': double maximumTemperature,
-        'mintemp_c': double minimumTemperature,
-        'avgtemp_c': double averageTemperature,
-        'daily_chance_of_rain': int rainPercentage,
-        'daily_chance_of_snow': int snowPercentage,
-        'condition': Map<String, dynamic> condition,
+        'maxtemp_c': final double maximumTemperature,
+        'mintemp_c': final double minimumTemperature,
+        'avgtemp_c': final double averageTemperature,
+        'daily_chance_of_rain': final int rainPercentage,
+        'daily_chance_of_snow': final int snowPercentage,
+        'condition': final Map<String, dynamic> condition,
       } =>
         Day(
           maximumTemperature: maximumTemperature,
@@ -38,4 +31,11 @@ class Day {
       _ => throw const FormatException('Could not deserialize Day model'),
     };
   }
+
+  final double maximumTemperature;
+  final double minimumTemperature;
+  final double averageTemperature;
+  final int rainPercentage;
+  final int snowPercentage;
+  final Condition condition;
 }

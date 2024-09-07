@@ -12,9 +12,9 @@ class WeatherReport {
   factory WeatherReport.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
-        'location': Map<String, dynamic> location,
-        'current': Map<String, dynamic> current,
-        'forecast': Map<String, dynamic> forecast,
+        'location': final Map<String, dynamic> location,
+        'current': final Map<String, dynamic> current,
+        'forecast': final Map<String, dynamic> forecast,
       } =>
         WeatherReport(
           location: Location.fromJson(location),

@@ -5,12 +5,10 @@ class Forecast {
     required this.forecastday,
   });
 
-  final List<ForecastDay> forecastday;
-
   factory Forecast.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
-        'forecastday': List<dynamic> forecastday,
+        'forecastday': final List<dynamic> forecastday,
       } =>
         Forecast(
           forecastday: forecastday
@@ -20,4 +18,6 @@ class Forecast {
       _ => throw const FormatException('Could not deserialize Forecast model'),
     };
   }
+
+  final List<ForecastDay> forecastday;
 }

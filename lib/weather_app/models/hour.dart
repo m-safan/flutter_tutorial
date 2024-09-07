@@ -9,20 +9,14 @@ class Hour {
     required this.snowPercentage,
   });
 
-  final DateTime time;
-  final double temperature;
-  final Condition condition;
-  final int rainPercentage;
-  final int snowPercentage;
-
   factory Hour.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
-        'time': String time,
-        'temp_c': double temperature,
-        'condition': Map<String, dynamic> condition,
-        'chance_of_rain': int rainPercentage,
-        'chance_of_snow': int snowPercentage,
+        'time': final String time,
+        'temp_c': final double temperature,
+        'condition': final Map<String, dynamic> condition,
+        'chance_of_rain': final int rainPercentage,
+        'chance_of_snow': final int snowPercentage,
       } =>
         Hour(
           time: DateTime.parse(time),
@@ -34,4 +28,10 @@ class Hour {
       _ => throw const FormatException('Could not deserialize Hour model'),
     };
   }
+
+  final DateTime time;
+  final double temperature;
+  final Condition condition;
+  final int rainPercentage;
+  final int snowPercentage;
 }

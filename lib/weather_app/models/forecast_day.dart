@@ -8,24 +8,26 @@ class ForecastDay {
     required this.hours,
   });
 
-  final DateTime date;
-  final Day day;
-  final List<Hour> hours;
-
   factory ForecastDay.fromJson(Map<String, dynamic> json) {
     return switch (json) {
       {
-        'date': String date,
-        'day': Map<String, dynamic> day,
-        'hour': List<dynamic> hours,
+        'date': final String date,
+        'day': final Map<String, dynamic> day,
+        'hour': final List<dynamic> hours,
       } =>
         ForecastDay(
           date: DateTime.parse(date),
           day: Day.fromJson(day),
-          hours: hours.map((x) => Hour.fromJson(x)).toList(),
+          hours: hours
+              .map((x) => Hour.fromJson(x as Map<String, dynamic>))
+              .toList(),
         ),
       _ =>
         throw const FormatException('Could not deserialize ForecastDay model'),
     };
   }
+
+  final DateTime date;
+  final Day day;
+  final List<Hour> hours;
 }
