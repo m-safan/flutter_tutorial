@@ -26,6 +26,8 @@ class _WeatherDetailState extends State<WeatherDetail>
       child: Column(
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
                 child: Column(
@@ -40,8 +42,12 @@ class _WeatherDetailState extends State<WeatherDetail>
                 ),
               ),
               Expanded(
-                  child: Image.network(
-                      'http:${widget.weatherReport.current.condition.icon}')),
+                  child: Column(
+                children: [
+                  Image.network(
+                      'http:${widget.weatherReport.current.condition.icon}')
+                ],
+              )),
               Expanded(
                 child: Column(
                   children: [

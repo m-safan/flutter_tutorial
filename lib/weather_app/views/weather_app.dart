@@ -61,12 +61,10 @@ class _WeatherAppState extends State<WeatherApp> {
                             icon: const Icon(Icons.close))),
               ),
             ),
-            if (_weatherReport != null)
-              Expanded(
-                child: WeatherDetail(
-                  weatherReport: _weatherReport!,
-                ),
-              ),
+            if (_weatherReport != null) ...[
+              const SizedBox(height: 50),
+              Expanded(child: WeatherDetail(weatherReport: _weatherReport!)),
+            ]
           ],
         ),
       ),
