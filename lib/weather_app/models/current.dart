@@ -10,7 +10,7 @@ class Current {
     return switch (json) {
       {
         'temp_c': double temperature,
-        'condition': Map<String, dynamic> condition
+        'condition': Map<String, dynamic> condition,
       } =>
         Current(
             temperature: temperature, condition: Condition.fromJson(condition)),

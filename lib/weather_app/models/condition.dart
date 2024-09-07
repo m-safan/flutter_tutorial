@@ -6,7 +6,10 @@ class Condition {
 
   factory Condition.fromJson(Map<String, dynamic> json) {
     return switch (json) {
-      {'text': String text, 'icon': String icon} =>
+      {
+        'text': String text,
+        'icon': String icon,
+      } =>
         Condition(text: text, icon: icon),
       _ => throw Exception('Could not deserialize Condition model'),
     };
