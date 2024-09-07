@@ -9,7 +9,7 @@ class WeatherService {
 
   Future<WeatherReport> getWeatherReport(String query) async {
     final response = await get(Uri.parse(
-        'https://api.weatherapi.com/v1/current.json?q=$query&key=$_apiKey'));
+        'https://api.weatherapi.com/v1/forecast.json?q=$query&days=14&key=$_apiKey'));
     if (response.statusCode != 200) throw Exception(response.statusCode);
 
     final json = jsonDecode(response.body) as Map<String, dynamic>;

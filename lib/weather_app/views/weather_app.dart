@@ -62,8 +62,10 @@ class _WeatherAppState extends State<WeatherApp> {
               ),
             ),
             if (_weatherReport != null)
-              WeatherDetail(
-                weatherReport: _weatherReport!,
+              Expanded(
+                child: WeatherDetail(
+                  weatherReport: _weatherReport!,
+                ),
               ),
           ],
         ),
