@@ -20,16 +20,18 @@ class WeatherDetail extends StatelessWidget {
                 style: const TextStyle(fontSize: 36),
               ),
               Text(
-                  '${weatherReport.location.region}, ${weatherReport.location.country}')
+                '''${weatherReport.location.region}, ${weatherReport.location.country}''',
+              ),
             ],
           ),
         ),
         Expanded(
-            child: Column(
-          children: [
-            Image.network('http:${weatherReport.current.condition.icon}'),
-          ],
-        )),
+          child: Column(
+            children: [
+              Image.network('http:${weatherReport.current.condition.icon}'),
+            ],
+          ),
+        ),
         Expanded(
           child: Column(
             children: [
@@ -37,10 +39,10 @@ class WeatherDetail extends StatelessWidget {
                 '${weatherReport.current.temperature.round()}\u00b0C',
                 style: const TextStyle(fontSize: 42),
               ),
-              Text(weatherReport.current.condition.text)
+              Text(weatherReport.current.condition.text),
             ],
           ),
-        )
+        ),
       ],
     );
   }
