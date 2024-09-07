@@ -24,7 +24,7 @@ class WeatherDetail extends StatelessWidget {
         ),
         Expanded(
             child:
-                Image.network('http:${weatherReport.current.conditon.icon}')),
+                Image.network('http:${weatherReport.current.condition.icon}')),
         Expanded(
           child: Column(
             children: [
@@ -32,7 +32,7 @@ class WeatherDetail extends StatelessWidget {
                 '${weatherReport.current.temperature.round()}\u00b0C',
                 style: const TextStyle(fontSize: 42),
               ),
-              Text(weatherReport.current.conditon.text)
+              Text(weatherReport.current.condition.text)
             ],
           ),
         )
