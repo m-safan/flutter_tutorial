@@ -77,7 +77,7 @@ class _WeatherAppState extends State<WeatherApp> {
             ),
             if (_weatherReport != null) ...[
               const SizedBox(height: 50),
-              Expanded(child: WeatherDetail(weatherReport: _weatherReport!)),
+              WeatherDetail(weatherReport: _weatherReport!),
             ]
           ],
         ),
