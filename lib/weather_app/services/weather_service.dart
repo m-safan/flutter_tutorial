@@ -5,7 +5,7 @@ import 'package:flutter_totorial/weather_app/models/weather_report.dart';
 import 'package:http/http.dart';
 
 class WeatherService {
-  final _apiKey = 'acad7ae8d9c04811983161245242708';
+  final _apiKey = '';
 
   Future<WeatherReport> getWeatherReport(String query) async {
     final response = await get(
