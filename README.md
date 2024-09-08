@@ -29,7 +29,7 @@ This is a step by step guid to get started with application development with Flu
 Weather forecast in the application uses the services from [WeatherAPI.com](https://www.weatherapi.com).
 
 To get your free / trail license (api-key) to use the services
-- Singnup yourself at [Weather Api - Sign up](https://www.weatherapi.com/signup.aspx "Weather Api - Sign up")
+- Signup yourself at [Weather Api - Sign up](https://www.weatherapi.com/signup.aspx "Weather Api - Sign up")
 - Verify your email by following the link sent to your registed email address
 - Login to your account [Weather Api - Login](https://www.weatherapi.com/login.aspx "Weather Api - Login")
 - Find your Api-Key in dashboard
