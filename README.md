@@ -6,8 +6,8 @@ This is a step by step guid to get started with application development with Flu
 ## Install Flutter on Windows
 
 - Download the [Flutter SDK](https://flutter-ko.dev/get-started/install/windows "Flutter SDK") as zip file
-- Extract to a specific folder `C:\Flutter_SDK`
-- Update Path in Environment variables `C:\Flutter_SDK\flutter\bin`
+- Extract to a specific folder `C:\`
+- Update Path in Environment variables `C:\flutter\bin`
 - Run `flutter doctor` in a command prompt
 
 
