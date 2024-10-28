@@ -11,6 +11,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Flutter Tutorial - PESITM',
       themeMode: ThemeMode.dark,
       theme: ThemeData.light(useMaterial3: false),
       darkTheme: ThemeData.dark(useMaterial3: false),

@@ -38,3 +38,10 @@ To get your free / trail license (api-key) to use the services
 Using api-key in our application
 - Navigate to `lib\weather_app\services\weather_services.dart`
 - Assign your api-key to the field `_apiKey` at line number 8
+
+## Screenshots
+
+![Home page](images/1.png)
+![Drawer / Menu](images/2.png)
+![Counter App](images/3.png)
+![Weather App](images/4.png)

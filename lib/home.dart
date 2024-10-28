@@ -33,17 +33,28 @@ class Home extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(100),
-        child: Wrap(
-          spacing: 50,
-          runSpacing: 50,
+        child: Column(
           children: [
-            ElevatedButton(
-              onPressed: () => _navigateTo('counter', context),
-              child: const Text('Counter App'),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () => _navigateTo('counter', context),
+                    child: const Text('Counter App'),
+                  ),
+                ),
+              ],
             ),
-            ElevatedButton(
-              onPressed: () => _navigateTo('weather', context),
-              child: const Text('Weather App'),
+            const SizedBox(height: 100),
+            Row(
+              children: [
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () => _navigateTo('weather', context),
+                    child: const Text('Weather App'),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
